@@ -19,6 +19,12 @@ Vagrant.configure("2") do |config|
     path: "scripts/bootstrap.sh"
 
   config.vm.provision "shell",
+    path: "scripts/keygen.sh"
+
+  config.vm.provision "shell",
+    path: "scripts/hadoop.sh"
+
+  config.vm.provision "shell",
     path: "scripts/startup.sh",
   run: "always"
 end
