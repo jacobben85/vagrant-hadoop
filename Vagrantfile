@@ -12,9 +12,8 @@ Vagrant.configure("2") do |config|
     v.name = "hadoop"
   end
 
-   port1 = 5044
-
-   config.vm.network(:forwarded_port, guest: port1, host: port1)
+   #port1 = 5044
+   #config.vm.network(:forwarded_port, guest: port1, host: port1)
 
   config.vm.provision "shell",
     path: "scripts/bootstrap.sh"
