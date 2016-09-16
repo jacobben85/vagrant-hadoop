@@ -47,10 +47,12 @@ mkdir -p /app/hadoop/tmp
 chown vagrant:hadoop /app/hadoop/tmp
 
 sed -i '/<configuration>/r /vagrant/configs/core-site.txt' /usr/local/hadoop/etc/hadoop/core-site.xml
-sed -i 's///' /usr/local/hadoop/etc/hadoop/core-site.xml
+sed -i 's///' /usr/local/hadoop/etc/hadoop/core-site.xml
+
 cp /usr/local/hadoop/etc/hadoop/mapred-site.xml.template /usr/local/hadoop/etc/hadoop/mapred-site.xml
 sed -i '/<configuration>/r /vagrant/configs/mapred-site.txt' /usr/local/hadoop/etc/hadoop/mapred-site.xml
-sed -i 's///' /usr/local/hadoop/etc/hadoop/mapred-site.xml
+sed -i 's///' /usr/local/hadoop/etc/hadoop/mapred-site.xml
+
 mkdir -p /usr/local/hadoop_store/hdfs/namenode
 sudo mkdir -p /usr/local/hadoop_store/hdfs/datanode
 sudo chown -R vagrant:hadoop /usr/local/hadoop_store
@@ -58,7 +60,7 @@ sudo chown -R vagrant:hadoop /usr/local/hadoop_store
 sed -i '/<configuration>/r /vagrant/configs/hdfs-site.txt' /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 sed -i 's///' /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 
-hadoop namenode -format
+sudo -H -u vagrant bash -c "hadoop namenode -format"
 
 chown -R vagrant:hadoop /usr/local/hadoop
 
