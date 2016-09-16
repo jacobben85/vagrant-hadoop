@@ -60,3 +60,5 @@ sed -i 's///' /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 
 hadoop namenode -format
 
+chown -R vagrant:hadoop /usr/local/hadoop
+
