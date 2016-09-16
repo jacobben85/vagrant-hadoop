@@ -60,7 +60,7 @@ sudo chown -R vagrant:hadoop /usr/local/hadoop_store
 sed -i '/<configuration>/r /vagrant/configs/hdfs-site.txt' /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 sed -i 's///' /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 
-sudo -H -u vagrant bash -c "hadoop namenode -format"
+sudo -H -u vagrant bash -c "/usr/local/hadoop/bin/hadoop namenode -format"
 
 chown -R vagrant:hadoop /usr/local/hadoop
 
