@@ -1,0 +1,3 @@
+[submodule "code/spring-yarn"]
+	path = code/spring-yarn
+	url = https://github.com/jacobben85/spring-yarn.git
